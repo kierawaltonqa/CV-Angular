@@ -1,29 +1,30 @@
 <div class="container">
-    <h2>Projects</h2>
+    <br />
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
+            <h2>Projects:</h2>
             <ul class="projects">
                 <li *ngFor="let project of projects">
                     <a routerLink="/projectdetail/{{project.id}}">
                         <span class="badge">{{project.id}}: </span>{{project.name}}</a>
-                    <button class="delete-button" (click)="deleteProject(project)">Delete</button>
+                    <button class="delete-button btn btn-danger" (click)="deleteProject(project)">X</button>
                 </li>
             </ul>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-4">
             <h2>Create a new project</h2>
-            <form class="form">
-                <label id="new-project">Project Name:</label>
-                <input for="new-project" #projectName />
-                <br />
-                <label id="new-project">Project Description:</label>
-                <input for="new-project" #projectDesc />
-                <br />
-                <button class="add-button"
-                    (click)="addProject(projectName.value, projectDesc.value); projectName.value=''; projectDesc.value=''">
-                    Add Project</button>
-            </form>
+            <!-- <form class="form"> -->
+            <label id="new-project">Project Name:</label>
+            <input for="new-project" #projectName />
+            <br />
+            <label id="new-project">Project Description:</label>
+            <input for="new-project" #projectDesc />
+            <br />
+            <button class="add-button btn btn-outline-dark"
+                (click)="addProject(projectName.value, projectDesc.value); projectName.value=''; projectDesc.value=''">
+                Add Project</button>
+            <!-- </form> -->
         </div>
     </div>
 </div>
