@@ -4,6 +4,7 @@
         <li *ngFor="let project of projects">
             <a routerLink="/projectdetail/{{project.id}}">
                 <span class="badge">{{project.id}}: </span>{{project.name}}</a>
+            <button class="delete-button" (click)="deleteProject(project)">Delete</button>
         </li>
     </ul>
 </div>

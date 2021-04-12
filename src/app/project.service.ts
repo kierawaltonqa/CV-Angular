@@ -52,4 +52,11 @@ export class ProjectService {
       catchError(this.handleError<Project>('addProject'))
     )
   }
+
+  deleteProject(id: number): Observable<Project> {
+    const url = `${this.projectsUrl}/${id}`;
+    return this.httpClient.delete<Project>(url, this.httpOptions).pipe(
+      catchError(this.handleError<Project>('deleteProject'))
+    );
+  }
 }

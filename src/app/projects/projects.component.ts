@@ -32,4 +32,10 @@ export class ProjectsComponent implements OnInit {
         this.projects.push(project);
       });
   }
+
+  deleteProject(project: Project): void {
+    this.projects = this.projects.filter(p => p !== project);
+    this.projectService.deleteProject(project.id).subscribe();
+  }
+
 }
