@@ -1,0 +1,9 @@
+<h2>My Technical Skills</h2>
+<div>
+    <ul>
+        <li *ngFor="let skill of skills">
+            <a routerLink="/detail/{{skill.id}}">
+                <span class="badge">{{skill.id}}: </span>{{skill.name}}</a>
+        </li>
+    </ul>
+</div>

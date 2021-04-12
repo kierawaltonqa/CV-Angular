@@ -1,0 +1,15 @@
+<div *ngIf="project">
+    <br />
+    <div class="card">
+        <div class="card-header">
+            <h2>{{project.name}}</h2>
+        </div>
+        <div class="card-body">
+            {{project.desc}}
+        </div>
+        <div class="card-footer">
+            <br />
+            <button (click)="goBack()">Go Back</button>
+        </div>
+    </div>
+</div>
