@@ -9,23 +9,25 @@
             <div class="card-body">
                 {{project.desc}}
                 <br />
+                <br />
                 <p class="github">Github:
                     <a href={{project.github}} target="_blank">{{project.github}}</a>
                 </p>
 
                 <br />
                 <div class="row">
-                    <div class="col-md-7 skills">
+                    <div class="col-md-7">
                         <h5>Technologies used:</h5>
-                        <div *ngFor="let skill of project.skills">
-                            <ul>
-                                <li>{{skill}}</li>
-                            </ul>
-                        </div>
+
+                        <ul class="skills">
+                            <li *ngFor="let skill of project.skills">{{skill}}</li>
+                        </ul>
+
 
                     </div>
                     <div class="col-md-5 edit">
-                        <h6>Want to edit this project?</h6>
+                        <h5>Want to edit this project?</h5>
+                        <hr />
                         <label id="project-name">Enter new name:</label>
                         <input id="project-name" [(ngModel)]="project.name">
                         <br />

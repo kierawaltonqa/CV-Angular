@@ -11,5 +11,21 @@
  }
  
  .edit {
+     /* position: absolute; */
      text-align: right;
+     right: 0;
+     font-size: 110%;
+ }
+ .skills {
+     list-style-type: none;
+     text-decoration: none;
+     cursor: pointer;
+     color: #333;
+     background-color: #EEE;
+     line-height: 2em;
+     border-radius: 2px;
+     display: block;
+ }
+ .github {
+     text-align: center;
  }

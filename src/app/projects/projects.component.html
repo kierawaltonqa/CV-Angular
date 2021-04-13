@@ -24,9 +24,11 @@
                 <label id="new-project">Project Description:</label>
                 <input for="new-project" #projectDesc />
                 <br />
+                <label id="new-project">Github:</label>
+                <input for="new-project" #projectGithub />
                 <br />
                 <button class="add-button btn btn-outline-dark"
-                    (click)="addProject(projectName.value, projectDesc.value); projectName.value=''; projectDesc.value=''">
+                    (click)="addProject(projectName.value, projectDesc.value, projectGithub.value); projectName.value=''; projectDesc.value=''; projectGithub.value=''">
                     Add Project</button>
                 <!-- </form> -->
             </div>

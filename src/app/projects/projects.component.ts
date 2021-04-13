@@ -22,12 +22,14 @@ export class ProjectsComponent implements OnInit {
       .subscribe(projects => this.projects = projects)
   }
 
-  addProject(name: string, desc: string): void {
+  addProject(name: string, desc: string, github: string): void {
     name = name.trim();
     desc = desc.trim();
+    github = github.trim();
     if (!name) { return; }
     if (!desc) { return; }
-    this.projectService.addProject({ name, desc } as Project)
+    if (!github) { return; }
+    this.projectService.addProject({ name, desc, github } as Project)
       .subscribe(project => {
         this.projects.push(project);
       });
