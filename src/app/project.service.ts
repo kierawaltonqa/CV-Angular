@@ -59,4 +59,10 @@ export class ProjectService {
       catchError(this.handleError<Project>('deleteProject'))
     );
   }
+
+  updateProject(project: Project): Observable<any> {
+    return this.httpClient.put(this.projectsUrl, project, this.httpOptions).pipe(
+      catchError(this.handleError<any>('updateProject'))
+    );
+  }
 }

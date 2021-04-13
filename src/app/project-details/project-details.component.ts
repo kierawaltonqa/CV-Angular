@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Project } from '../projects';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -32,5 +32,10 @@ export class ProjectDetailsComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  save(): void {
+    this.projectService.updateProject(this.project)
+      .subscribe(() => this.goBack());
   }
 }

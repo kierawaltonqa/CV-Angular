@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     HttpClientInMemoryWebApiModule.forRoot(DataService, { dataEncapsulation: false })
   ],
   providers: [],
