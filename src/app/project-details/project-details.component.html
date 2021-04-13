@@ -1,26 +1,45 @@
-<div *ngIf="project">
-    <br />
-    <div class="card">
-        <div class="card-header">
-            <h2>{{project.name}}</h2>
+<div class="container">
+    <div *ngIf="project">
+        <br />
+        <div class="card">
+            <div class="card-header">
+                <h2>{{project.name}}</h2>
 
-        </div>
-        <div class="card-body">
-            {{project.desc}}
+            </div>
+            <div class="card-body">
+                {{project.desc}}
 
-            <br />
-            <br />
-            <h6>Want to edit this project?</h6>
-            <label id="project-name">Enter new name:</label>
-            <input id="project-name" [(ngModel)]="project.name">
-            <label id="project-desc">Enter new description:</label>
-            <input id="project-desc" [(ngModel)]="project.desc">
-            <button (click)="save()">Save</button>
-        </div>
-        <div class="card-footer">
-            <br />
-            <button (click)="goBack()">Go Back</button>
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-md-7 skills">
+                        <h5>Technologies used:</h5>
+                        <div *ngFor="let skill of project.skills">
+                            <ul>
+                                <li>{{skill}}</li>
+                            </ul>
+                        </div>
 
+                    </div>
+                    <div class="col-md-5 edit">
+                        <h6>Want to edit this project?</h6>
+                        <label id="project-name">Enter new name:</label>
+                        <input id="project-name" [(ngModel)]="project.name">
+                        <br />
+
+                        <label id="project-desc">Enter new description:</label>
+                        <input id="project-desc" [(ngModel)]="project.desc">
+                        <br />
+
+                        <button class="save-button btn btn-outline-primary" (click)="save()">Save</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <br />
+                <button class="back-button btn btn-outline-light" (click)="goBack()">Go Back</button>
+
+            </div>
         </div>
     </div>
 </div>

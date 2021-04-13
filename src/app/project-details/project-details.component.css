@@ -1,0 +1,15 @@
+ .card {
+     margin: 0 0 5em 0;
+     padding: 0;
+ }
+ .card-header, .card-footer {
+    background-color:#405061;
+    color: white;
+ }
+ .card-header {
+     font-size: xx-large;
+ }
+ 
+ .edit {
+     text-align: right;
+ }
