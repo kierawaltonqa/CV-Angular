@@ -14,6 +14,7 @@ export class ProjectDetailsComponent implements OnInit {
 
   project!: Project;
 
+
   constructor(
     private route: ActivatedRoute,
     private location: Location,
@@ -37,5 +38,13 @@ export class ProjectDetailsComponent implements OnInit {
   save(): void {
     this.projectService.updateProject(this.project)
       .subscribe(() => this.goBack());
+  }
+
+  addSkill(skill: string): void {
+    this.project.skills.push(skill);
+    this.projectService.updateProject(this.project)
+      .subscribe(skill => {
+        this.project.skills.push(skill);
+      });
   }
 }

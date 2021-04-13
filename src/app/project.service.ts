@@ -65,5 +65,4 @@ export class ProjectService {
       catchError(this.handleError<any>('updateProject'))
     );
   }
-  // updateProjectSkill(skills: string): <Observ
 }
