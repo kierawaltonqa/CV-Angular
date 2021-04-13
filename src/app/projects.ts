@@ -3,4 +3,5 @@ export interface Project {
     name: string;
     desc: string;
     skills: string[];
+    github: string;
 }
