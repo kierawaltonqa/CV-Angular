@@ -4,7 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { ProjectService } from '../project.service';
 import { map } from 'rxjs/operators';
-import { stringify } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-project-details',
@@ -50,22 +49,11 @@ export class ProjectDetailsComponent implements OnInit {
         });
     }
     else {
-      // this.skills.push(skill);
       this.project.skills = [skill];
       this.projectService.updateProject(this.project)
         .subscribe(skill => {
           this.project.skills.push(skill);
         })
-      console.log("hi");
-
-
-      // console.log("hi");
-      // return;
-      // const id = Number(this.route.snapshot.paramMap.get('id'));
-      // this.projectService.getProject(id)
-      //   .subscribe(project => this.project = project);
-      // this.projectService.addProject(this.project)
-      // .subscribe(skill => this.project.skills.push(skill))
     }
   }
 }

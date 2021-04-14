@@ -20,11 +20,15 @@
                         <h5>Technologies used:</h5>
 
                         <ul class="skills">
-                            <li *ngFor="let skill of project.skills">{{skill}}</li>
+                            <li *ngFor="let skill of project.skills">
+                                <button>X</button><span>{{skill}}</span>
+
+                            </li>
                         </ul>
-                        <label id="new skill">Add Skill:</label>
-                        <input for="new-skill" #skill />
-                        <button (click)="addSkill(skill.value); skill.value=''">Add</button>
+                        <!-- <label id="new skill">Add Skill: </label> -->
+                        <input for="new-skill" #skill placeholder="add new skill" />
+                        <button class="add-button btn btn-outline-primary"
+                            (click)="addSkill(skill.value); skill.value=''">Add</button>
 
 
                     </div>

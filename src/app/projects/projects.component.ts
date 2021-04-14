@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../projects';
 import { ProjectService } from '../project.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-projects',
@@ -11,7 +12,11 @@ export class ProjectsComponent implements OnInit {
 
   projects: Project[] = [];
 
-  constructor(private projectService: ProjectService) { }
+  // for modal
+  closeResult!: string;
+
+  constructor(private projectService: ProjectService,
+    private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.getProjects();
@@ -38,6 +43,11 @@ export class ProjectsComponent implements OnInit {
   deleteProject(project: Project): void {
     this.projects = this.projects.filter(p => p !== project);
     this.projectService.deleteProject(project.id).subscribe();
+    this.modalService.dismissAll();
+  }
+
+  openModal(content: any) {
+    this.modalService.open(content, { size: 'sm' });
   }
 
 }
