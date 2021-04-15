@@ -1,7 +1,22 @@
-<div *ngIf="skill">
+<!-- <div *ngIf="skill">
     <h2>{{skill.name}}:</h2>
     <div>
         <p>{{skill.types}}</p>
     </div>
     <button (click)="goBack()">Go Back</button>
+</div> -->
+<div class="container">
+    <div *ngIf="language">
+        <div class="card">
+            <div class="card-header">
+                <h2>{{language.type}}</h2>
+            </div>
+            <div class="card-body">
+                {{language.description}}
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-outline-dark" (click)="goBack()">Go back</button>
+            </div>
+        </div>
+    </div>
 </div>

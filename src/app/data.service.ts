@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { Skill } from './skills';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,69 +10,57 @@ export class DataService implements InMemoryDbService {
   constructor() { }
 
   createDb() {
-    let skills = [
-      {
-        id: 1, name: 'Programming Languages', types: [
-          { type: 'Java', description: 'One of the most widely used programming languages, Java is used as the server-side language for most back-end development projects.' },
-          { type: 'HTML', description: 'HTML...' },
-          { type: 'CSS', description: 'CSS...' },
-          { type: 'JavaScript', description: 'JavaS...' },
-          { type: 'TypeScript', description: 'TS...' },
-          { type: 'Python', description: 'Python...' },
-        ]
-      },
-      {
-        id: 2, name: "IDE's", types: [
-          { type: 'IntelliJ', description: 'Int....' },
-          { type: 'Eclipse', description: 'Eclipse....' },
-          { type: 'Visual Studio Code', description: 'VSC....' },
-          { type: 'Spring Toolsuite', description: 'ST....' }
-        ]
-      },
-      {
-        id: 3, name: 'Devops Technologies', types: [
-          { type: 'Jenkins', description: 'Jenkins is...' },
-          { type: 'Git', description: 'Git is...' },
-          { type: 'Selenium', description: 'Sel is...' },
-          { type: 'Node', description: 'Node is...' }
-        ]
-      },
-      {
-        id: 4, name: 'Database Technologies', types: [
-          { type: 'MySQL', description: 'MySQL is...' },
-          { type: 'MongoDb', description: 'MongoDb is...' },
-          { type: 'H2', description: 'H2 is...' },
-          { type: 'Postman', description: 'Postman is...' }
-        ]
-      },
-      {
-        id: 5, name: 'Cloud Platforms', types: [
-          { type: 'AWS', description: 'AWS is .....' },
-          { type: 'GCP', description: 'GCP is .....' }
-        ]
-      },
-      {
-        id: 6, name: 'Operating Systems', types: [
-          { type: 'Windows', description: 'Windows is...' }
-        ]
-      },
-      {
-        id: 7, name: 'JavaScript Full Stack Frameworks', types: [
-          { type: 'MERN', description: 'MERN is mongoDb, express, react and node' },
-          { type: 'MEAN', description: 'MEAN is mongoDb, express, angular and node' }
-        ]
-      },
-      {
-        id: 8, name: 'Other', types: [
-          { type: 'Agile Scrum', description: 'Agile is...' },
-          { type: 'JUnit', description: 'JUnit is...' },
-          { type: 'Maven', description: 'Maven is...' },
-          { type: 'SonarQube', description: 'SonarQube is...' },
-          { type: 'Express', description: 'Express is...' },
-          { type: 'React', description: 'React is...' },
-        ]
-      }
-    ];
+    let languages = [
+      { id: 1, type: 'Java', description: 'One of the most widely used programming languages, Java is used as the server-side language for most back-end development projects.' },
+      { id: 2, type: 'HTML', description: 'HTML...' },
+      { id: 3, type: 'CSS', description: 'CSS...' },
+      { id: 4, type: 'JavaScript', description: 'JavaS...' },
+      { id: 5, type: 'TypeScript', description: 'TS...' },
+      { id: 6, type: 'Python', description: 'Python...' },
+    ]
+
+    let IDEs = [
+      { id: 1, type: "IntelliJ", description: 'Int....' },
+      { id: 2, type: 'Eclipse', description: 'Eclipse....' },
+      { id: 3, type: 'Visual Studio Code', description: 'VSC....' },
+      { id: 4, type: 'Spring Toolsuite', description: 'ST....' }
+    ]
+
+    let DevOpsTech = [
+      { id: 1, type: 'Jenkins', description: 'Jenkins is...' },
+      { id: 2, type: 'Git', description: 'Git is...' },
+      { id: 3, type: 'Selenium', description: 'Sel is...' },
+      { id: 4, type: 'Node', description: 'Node is...' }
+    ]
+
+    let databaseTech = [
+      { id: 1, type: 'MySQL', description: 'MySQL is...' },
+      { id: 2, type: 'MongoDb', description: 'MongoDb is...' },
+      { id: 3, type: 'H2', description: 'H2 is...' },
+      { id: 4, type: 'Postman', description: 'Postman is...' }
+    ]
+
+    let cloudPlatformsAndOS = [
+      { id: 1, type: 'AWS', description: 'AWS is .....' },
+      { id: 2, type: 'GCP', description: 'GCP is .....' },
+      { id: 3, type: 'Windows', description: 'Windows is...' }
+    ]
+
+    let fullStack = [
+      { id: 1, type: 'MERN', description: 'MERN is mongoDb, express, react and node' },
+      { id: 2, type: 'MEAN', description: 'MEAN is mongoDb, express, angular and node' }
+
+    ]
+
+    let other = [
+      { id: 1, type: 'Agile Scrum', description: 'Agile is...' },
+      { id: 2, type: 'JUnit', description: 'JUnit is...' },
+      { id: 3, type: 'Maven', description: 'Maven is...' },
+      { id: 4, type: 'SonarQube', description: 'SonarQube is...' },
+      { id: 5, type: 'Express', description: 'Express is...' },
+      { id: 6, type: 'React', description: 'React is...' },
+    ]
+
     let projects = [
       {
         id: 1, name: 'IMS System', desc: 'By connecting to GCP via a JDBC connection to host a MySQL database, this project created a system with CRUD (create, read, update and delete) functionality for manipulation of data on the cloud. This project was developed and implemented using Maven as a build tool and Java source code to run and execute the processes, and JUnit and Mockito were used to test the CRUD functionality. Git was used throughout the project for the continuous integration of code, whereby the feature-branch model on GitHub was utilised to implement this process. Furthermore, the project utilised agile processes so as to allow for a flexible and adaptive workflow. The resulting product of this project was a working inventory management system which tracks and manipulates customer information, order details and item data - all of which users can interact with via a command line.',
@@ -91,13 +79,13 @@ export class DataService implements InMemoryDbService {
       }
     ]
 
-    return { skills, projects };
+    return { languages, IDEs, DevOpsTech, databaseTech, cloudPlatformsAndOS, fullStack, other, projects };
   }
 
 
 
 
-  genId(skills: Skill[]): number {
-    return skills.length > 0 ? Math.max(...skills.map(skill => skill.id)) + 1 : 11;
-  }
+  // genId(skills: Skill[]): number {
+  //   return skills.length > 0 ? Math.max(...skills.map(skill => skill.id)) + 1 : 11;
+  // }
 }

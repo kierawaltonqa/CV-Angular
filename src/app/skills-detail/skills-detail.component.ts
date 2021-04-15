@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Skill } from '../skills';
+import { IDEs, DevOpsTech, databaseTech, cloudPlatformsAndOS, fullStack, other } from '../skills';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { SkillsService } from '../skills.service';
 import { map } from 'rxjs/operators';
+import { Languages } from '../languages';
+import { LanguagesService } from '../languages.service';
 
 @Component({
   selector: 'app-skills-detail',
@@ -12,26 +14,24 @@ import { map } from 'rxjs/operators';
 })
 export class SkillsDetailComponent implements OnInit {
 
-  skill!: Skill;
+  // skill!: Skill;
+  language!: Languages;
 
   constructor(
     private route: ActivatedRoute,
     private location: Location,
-    private skillsService: SkillsService
+    private skillsService: SkillsService,
+    private languagesService: LanguagesService
   ) { }
 
   ngOnInit(): void {
-    this.getSkill();
+    this.getLanguage();
   }
 
-  getSkill(): void {
+  getLanguage(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.skillsService.getSkill(id)
-      .subscribe(skill => this.skill = skill);
-    // this.skillsService.getSkill(id).pipe(
-    //   map(res => res.types),
-    //   map(types => types.map(info => ({ type: info.type, description: info.description }))),
-    // ).subscribe(skill => this.skill = skill);
+    this.languagesService.getLanguage(id)
+      .subscribe(language => this.language = language);
   }
 
   goBack(): void {

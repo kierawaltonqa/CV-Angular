@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Skill } from './skills';
+import { IDEs, DevOpsTech, databaseTech, cloudPlatformsAndOS, fullStack, other } from './skills';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
@@ -8,7 +8,14 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class SkillsService {
-  private skillsUrl = 'api/skills';
+  private languagesUrl = 'api/skills';
+  private IDEsUrl = 'api/IDEs';
+  private devOpsURL = 'api/DevOpsTech';
+  private dbURL = 'api/databaseTech';
+  private cloudOSURL = 'api/cloudPlatformsAndOS';
+  private fullStackURL = 'api/fullStack';
+  private otherURL = 'api/other';
+
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
@@ -32,18 +39,53 @@ export class SkillsService {
     };
   }
 
-  getSkills(): Observable<Skill[]> {
-    return this.httpClient.get<Skill[]>(this.skillsUrl)
+
+  getIDEs(): Observable<IDEs[]> {
+    return this.httpClient.get<IDEs[]>(this.IDEsUrl)
       .pipe(
         // tap(_ => this.log('got skills'))
-        catchError(this.handleError<Skill[]>('getSkills', []))
+        catchError(this.handleError<IDEs[]>('getIDEs', []))
       )
   }
-
-  getSkill(id: number): Observable<Skill> {
-    const url = `${this.skillsUrl}/${id}`;
-    return this.httpClient.get<Skill>(url).pipe(
-      catchError(this.handleError<Skill>(`getSkill id=${id}`))
-    );
+  getDevOps(): Observable<DevOpsTech[]> {
+    return this.httpClient.get<DevOpsTech[]>(this.devOpsURL)
+      .pipe(
+        // tap(_ => this.log('got skills'))
+        catchError(this.handleError<DevOpsTech[]>('getDevOps', []))
+      )
   }
+  getDbs(): Observable<databaseTech[]> {
+    return this.httpClient.get<databaseTech[]>(this.dbURL)
+      .pipe(
+        // tap(_ => this.log('got skills'))
+        catchError(this.handleError<databaseTech[]>('getDatabases', []))
+      )
+  }
+  getCloudOS(): Observable<cloudPlatformsAndOS[]> {
+    return this.httpClient.get<cloudPlatformsAndOS[]>(this.cloudOSURL)
+      .pipe(
+        // tap(_ => this.log('got skills'))
+        catchError(this.handleError<cloudPlatformsAndOS[]>('getCOS', []))
+      )
+  }
+  getFullStack(): Observable<fullStack[]> {
+    return this.httpClient.get<fullStack[]>(this.fullStackURL)
+      .pipe(
+        // tap(_ => this.log('got skills'))
+        catchError(this.handleError<fullStack[]>('getStacks', []))
+      )
+  }
+  getOther(): Observable<other[]> {
+    return this.httpClient.get<other[]>(this.otherURL)
+      .pipe(
+        // tap(_ => this.log('got skills'))
+        catchError(this.handleError<other[]>('getOther', []))
+      )
+  }
+  // getSkill(id: number): Observable<Skill> {
+  //   const url = `${this.skillsUrl}/${id}`;
+  //   return this.httpClient.get<Skill>(url).pipe(
+  //     catchError(this.handleError<Skill>(`getSkill id=${id}`))
+  //   );
+  // }
 }

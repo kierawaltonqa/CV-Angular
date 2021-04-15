@@ -1,9 +1,86 @@
-<h2>My Technical Skills</h2>
-<div>
-    <ul>
-        <li *ngFor="let skill of skills">
-            <a routerLink="/detail/{{skill.id}}">
-                <span class="badge">{{skill.id}}: </span>{{skill.name}}</a>
-        </li>
-    </ul>
-</div>
+<div class="container">
+    <h2>My Technical Skills</h2>
+    <div class="row">
+
+        <div class="col-md-3">
+            <h6>Programming Languages <span> <button class="btn btn-outline-dark"
+                        (click)="showLanguages()">+</button></span></h6>
+            <div id="languages">
+                <ul>
+                    <li *ngFor="let language of languages">
+                        <a routerLink="/detail/{{language.id}}">
+                            <span class="badge"> {{language.id}}: </span>{{language.type}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h6>IDEs <span> <button class="btn btn-outline-dark" (click)="showIDEs()">+</button></span></h6>
+            <div id="IDEs">
+                <ul>
+                    <li *ngFor="let IDE of IDEs">
+                        {{IDE.type}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h6>DevOps Technologies <span> <button class="btn btn-outline-dark" (click)="showDevOps()">+</button></span>
+            </h6>
+            <div id="devOps">
+                <ul>
+                    <li *ngFor="let DO of devOps">
+                        {{DO.type}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h6>Database Technologies <span> <button class="btn btn-outline-dark" (click)="showDBs()">+</button></span>
+            </h6>
+            <div id="dbs">
+                <ul>
+                    <li *ngFor="let database of db">
+                        {{database.type}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <h6>Cloud Platforms and Operating Systems <span> <button class="btn btn-outline-dark"
+                        (click)="showCloudOS()">+</button></span>
+            </h6>
+            <div id="COS">
+                <ul>
+                    <li *ngFor="let COS of cloudOS">
+                        {{COS.type}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h6>Full Stack Frameworks <span> <button class="btn btn-outline-dark"
+                        (click)="showFullStack()">+</button></span>
+            </h6>
+            <div id="fullStack">
+                <ul>
+                    <li *ngFor="let FS of fullStack">
+                        {{FS.type}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h6>Other <span> <button class="btn btn-outline-dark" (click)="showOther()">+</button></span>
+            </h6>
+            <div id="other">
+                <ul>
+                    <li *ngFor="let oth of other">
+                        {{oth.type}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
