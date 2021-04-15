@@ -47,6 +47,13 @@ export class SkillsService {
         catchError(this.handleError<IDEs[]>('getIDEs', []))
       )
   }
+  getIDE(id: number): Observable<IDEs> {
+    const url = `${this.IDEsUrl}/${id}`;
+    return this.httpClient.get<IDEs>(url).pipe(
+      catchError(this.handleError<IDEs>(`getIDE id=${id}`))
+    );
+  }
+
   getDevOps(): Observable<DevOpsTech[]> {
     return this.httpClient.get<DevOpsTech[]>(this.devOpsURL)
       .pipe(
@@ -54,6 +61,13 @@ export class SkillsService {
         catchError(this.handleError<DevOpsTech[]>('getDevOps', []))
       )
   }
+  getDevOp(id: number): Observable<DevOpsTech> {
+    const url = `${this.devOpsURL}/${id}`;
+    return this.httpClient.get<DevOpsTech>(url).pipe(
+      catchError(this.handleError<DevOpsTech>(`getDevOps id=${id}`))
+    );
+  }
+
   getDbs(): Observable<databaseTech[]> {
     return this.httpClient.get<databaseTech[]>(this.dbURL)
       .pipe(

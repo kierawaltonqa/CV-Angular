@@ -14,7 +14,6 @@ import { LanguagesService } from '../languages.service';
 })
 export class SkillsDetailComponent implements OnInit {
 
-  // skill!: Skill;
   language!: Languages;
 
   constructor(

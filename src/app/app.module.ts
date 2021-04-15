@@ -12,6 +12,8 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DataService } from './data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
+import { IDEComponent } from './ide/ide.component';
+import { DevopsComponent } from './devops/devops.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
     SkillsComponent,
     ProjectsComponent,
     SkillsDetailComponent,
-    ProjectDetailsComponent
+    ProjectDetailsComponent,
+    IDEComponent,
+    DevopsComponent
   ],
   imports: [
     BrowserModule,

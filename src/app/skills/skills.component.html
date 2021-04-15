@@ -1,7 +1,6 @@
 <div class="container">
     <h2>My Technical Skills</h2>
     <div class="row">
-
         <div class="col-md-3">
             <h6>Programming Languages <span> <button class="btn btn-outline-dark"
                         (click)="showLanguages()">+</button></span></h6>
@@ -19,7 +18,8 @@
             <div id="IDEs">
                 <ul>
                     <li *ngFor="let IDE of IDEs">
-                        {{IDE.type}}
+                        <a routerLink="/ide/{{IDE.id}}">
+                            <span class="badge">{{IDE.id}}: </span> {{IDE.type}}</a>
                     </li>
                 </ul>
             </div>
@@ -30,7 +30,8 @@
             <div id="devOps">
                 <ul>
                     <li *ngFor="let DO of devOps">
-                        {{DO.type}}
+                        <a routerLink="/devops/{{DO.id}}">
+                            <span class="badge">{{DO.id}}: </span> {{DO.type}} </a>
                     </li>
                 </ul>
             </div>

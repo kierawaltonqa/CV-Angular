@@ -1,0 +1,15 @@
+<div class="container">
+    <div *ngIf="devOps">
+        <div class="card">
+            <div class="card-header">
+                <h2>{{devOps.type}}</h2>
+            </div>
+            <div class="card-body">
+                {{devOps.description}}
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-outline-dark" (click)="goBack()">Go back</button>
+            </div>
+        </div>
+    </div>
+</div>
