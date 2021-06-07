@@ -10,7 +10,7 @@ import { IDEComponent } from './ide/ide.component';
 import { DevopsComponent } from './devops/devops.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/profile', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'profile', component: ProfileComponent },
   { path: 'skills', component: SkillsComponent },
   { path: 'projects', component: ProjectsComponent },
